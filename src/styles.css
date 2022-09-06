@@ -22,7 +22,7 @@ body {
     color:slategray
   }
 
-  p {
+  p, a {
     font-weight: 500;
     color: slategray;
   }
@@ -42,9 +42,8 @@ body {
     font-weight: normal;
   }
 
-  .position{
-    display: flex;
-  
+  #mylocation{
+    margin: 0 30%;
   }
 
   .btn_out_color {
@@ -75,11 +74,15 @@ body {
     font-weight: bolder;
   }
   
-  .row_pad {
-    padding: 15px 0;
+  .weatherappcard{
+  vertical-align: middle;
+  padding: 2%;
+  border-color: #ffffff;
+
   }
-  
-  .weatherapp {
-    margin: 20px auto;
+
+  #footer {
+    font-size: small;
+    text-align: center;
   }
   

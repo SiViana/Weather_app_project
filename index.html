@@ -20,9 +20,9 @@
   <body>
     <div class="container">
 
-      <div class="row row_pad"> <!--HeadersDivStart-->
+      <div class="row"> <!--HeadersDivStart-->
 
-        <div class="col-sm align-self-center"> <!--HeadersColStart-->
+        <div class="col-sm card weatherappcard"> <!--HeadersColStart-->
           <h1>
             <i class="fas fa-globe-europe"></i>
             <span id="showLocation">
@@ -35,7 +35,7 @@
           </h3>
         </div>  <!--HeadersColEnd-->
 
-        <div class="col-sm align-self-center"> <!--TemperatureColStart--> 
+        <div class="col-sm card weatherappcard"> <!--TemperatureColStart--> 
           <h1 class="weather_color_blue">
             <i class="fas fa-temperature-high"></i> 
             <span id="temperature">
@@ -47,9 +47,9 @@
           </h1>
         </div> <!--TemperatureColEnd--> 
 
-        <div class="col-sm align-self-center"> <!--DescriptionColStart--> 
+        <div class="col-sm card weatherappcard"> <!--DescriptionColStart--> 
+          <h1><i class="fas fa-rainbow"></i></h1>
           <h4 id="description">
-            <!--<i class="fas fa-sun"></i>-->
             Current weather
           </h4>
           <h4 id="humidity">
@@ -59,7 +59,7 @@
             Wind speed
           </h4>
         </div> <!--DescriptionColEnd--> 
-        <div class="col-sm align-self-center"> <!--ImgsColStart-->
+        <div class="col-sm card weatherappcard"> <!--ImgsColStart-->
           <img
             src="https://www.kiwanidolean.com/wp-content/uploads/Summer_2020_Wallpaper_Preview.png"
             alt="laptop with summer wallpaper from kiwanidolean.com" 
@@ -68,10 +68,10 @@
       </div> <!--HeadersDivEnd-->
       
 
-      <div class="row row_pad"> <!--LocationRowStart-->
+      <div class="row"> <!--LocationRowStart-->
 
         
-        <div class="col-sm"> <!--FormColStart--> 
+        <div class="col-sm card weatherappcard"> <!--FormColStart--> 
           <form class="row"
                 id="frloc">
                 <div class="col-9">
@@ -88,9 +88,10 @@
             </form>
         </div> <!--FormColEnd--> 
         
-        <div class="col-sm">  <!--MyLocationColStart--> 
+        <div class="col-sm card weatherappcard">  <!--MyLocationColStart--> 
           <button 
             id="mylocation"
+            type="button"
             class="btn btn-outline-secondary btn_out_color"
             onclick="myLocation()"
             > My Location
@@ -100,7 +101,7 @@
       </div> <!--LocationRowEnd-->
 
       <!--
-      <div class="row row_pad"> 
+      <div class="row"> 
         <div class="col-auto">
           <div class="card" style="width: 12rem;">
             <div class="card-body">
@@ -188,7 +189,15 @@
         </div>
         
       </div>-->
+       <!--footer-->
+       <div class="card weatherappcard" id="footer">
+        <p class="card-title">Weather_app_project 
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/SiViana/Weather_app_project"> by SiViana</a>
+        </p>
+      </div>      
     </div>
+    
 
     <script src="src/index.js"></script>
   </body>
