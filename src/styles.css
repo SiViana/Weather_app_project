@@ -1,0 +1,85 @@
+body {
+    font-family: 'Sora', sans-serif;
+  }
+  
+  h1,
+  h4 {
+    color: #23aaae;
+  }
+  
+  #headerTime {
+    color: #f95800;
+  }
+  
+  h3 {
+    font-weight: 400;
+    text-align: center;
+  }
+  
+  #headerDate {
+    text-align: left;
+    font-size: 20px;
+    color:slategray
+  }
+
+  p {
+    font-weight: 500;
+    color: slategray;
+  }
+  
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0px auto;
+  } 
+  
+  
+  .superscript {
+    font-size: 24px;
+    vertical-align: 10px;
+    text-align: center;
+    font-weight: normal;
+  }
+
+  .position{
+    display: flex;
+  
+  }
+
+  .btn_out_color {
+    border-color: #f95800;
+    color: #f95800;
+  }
+  
+  .btn_out_color:hover {
+    color: #ffffff;
+    background: #f95800;
+    border: #f95800;
+  }
+  
+  .weather_color_blue, #fahrenheit:hover {
+    color: #23aaae;
+  }
+
+  .weather_color_grey, #celsius:hover {
+    color: slategray;
+  }
+  
+  .titles {
+    color: #10727b;
+  }
+  
+  .subtitles {
+    color: #f95800;
+    font-weight: bolder;
+  }
+  
+  .row_pad {
+    padding: 15px 0;
+  }
+  
+  .weatherapp {
+    margin: 20px auto;
+  }
+  
