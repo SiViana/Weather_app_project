@@ -34,11 +34,15 @@ body {
   
   /*id's*/
 
-  #description, #precipitation{
+  #description {
     color: #23aaae;
   }
 
-    #footer {
+  #description:first-letter {
+    text-transform: capitalize;
+  }
+
+  #footer {
     font-size: small;
     text-align: center;
     padding-top: 10px;
@@ -46,14 +50,22 @@ body {
 
   #headerDate {
     text-align: left;
-    font-size: 20px;
+    font-size: 16px;
     color:slategray
   }
 
   #headerTime {
     text-align: left;
-    font-size: 24px;
+    font-size: 20px;
     color: #f95800;
+  }
+
+  #humidity{
+    color: #23aaae;
+  }
+
+  #lastupdate{
+    font-size: smaller;
   }
 
   #windspeed {

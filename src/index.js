@@ -34,7 +34,7 @@ let actualDate = new Date();
     
     function myLocation(event){
         navigator.geolocation.getCurrentPosition(getPosition);
-        //console.log("inside myLocation")
+    
     }
 
     myLocation()
@@ -47,20 +47,20 @@ let actualDate = new Date();
         let apiKey = "688018bb7f107c9335eff97b45fc2591";
         let apiUrl = `${endPoint}lat=${lat}&lon=${long}&units=${units}&appid=${apiKey}`;
         axios.get(apiUrl).then(showWeather);
-        //console.log("inside getPosition")
+
       }
     
     //Show location from text-box
 
 let formInput = document.querySelector("#frloc");
 formInput.addEventListener("submit",readLocation);
-//console.log("after formInput")
+
 
 function readLocation(event){
     event.preventDefault();
     let location = document.querySelector("#formlocation").value;
     displayLocation(location);
-    //console.log("inside readLocation")
+
     
 }
 
@@ -70,8 +70,25 @@ function displayLocation (location){
     let apiKey = "688018bb7f107c9335eff97b45fc2591";
     locationUrl = `${endPoint}q=${location}&units=${units}&appid=${apiKey}`;
     axios.get(locationUrl).then(showWeather);
-    //console.log("inside displayLocation")
     
+}
+
+function formatDate(timestamp){
+
+    let lastUpdate = new Date(timestamp)
+
+    //Time format
+    let updateHour = ("0" + lastUpdate.getHours()).slice(-2);
+    let updateMinutes = ("0" + lastUpdate.getMinutes()).slice(-2);
+
+    //Date format
+    
+    let updateMonth = ("0" + (lastUpdate.getMonth()+1));
+    let updateDay = ("0" + lastUpdate.getDate()).slice(-2);
+    let updateYear = (lastUpdate.getYear())-100;
+    
+
+    return `last updated on <br>${updateDay}/${updateMonth}/${updateYear} at ${updateHour}:${updateMinutes}`
 }
 
     function showWeather(response) {
@@ -81,7 +98,6 @@ function displayLocation (location){
         let humidity = response.data.main.humidity;
         let windspeed = Math.round(response.data.wind.speed*3600/1000); //convert m/s to km/h
 
-
         let actualLocation= document.querySelector("#showLocation");
         actualLocation.innerHTML = `${city}`;
 
@@ -89,7 +105,7 @@ function displayLocation (location){
         actualTemperature.innerHTML = `${temperature}`;
 
         let actualWeather = document.querySelector("#description");
-        actualWeather.innerHTML = `Actual weather is: ${description}`;
+        actualWeather.innerHTML = `${description}`;
 
         let actualHumidity = document.querySelector("#humidity");
         actualHumidity.innerHTML = `Humidity: ${humidity}%`;
@@ -97,7 +113,10 @@ function displayLocation (location){
         let actualWindSpeed = document.querySelector("#windspeed");
         actualWindSpeed.innerHTML = `Wind speed: ${windspeed}Km/h`;
 
-        console.log(response)
+        let lastUpdate = document.querySelector("#lastupdate");
+        lastUpdate.innerHTML = formatDate(response.data.dt*1000);
+
+        
       }
 
 
