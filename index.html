@@ -18,202 +18,237 @@
     <title>Weather app</title>
   </head>
   <body>
-    <div class="container">
+    <div class="weatherappwrapper"> <!--wrapper start-->
 
-      <div class="row"> <!--HeadersDivStart-->
+      <div class="container"> <!--container start-->
 
-        <div class="col-sm card weatherappcard"> <!--HeadersColStart-->
-          <h1>
-            <i class="fas fa-globe-europe"></i>
-            <span id="showLocation">
-              Lisbon
-            </span>
-          </h1>
-          <ul>
-            <li>
-              <h2 id="headerTime">
-              </h2>
-            </li>
-            <li>
-              <h3 id="headerDate">
-              </h3>
-            </li>
-            <li>
-              <p id="description">
-                Current weather
-              </p>
-            </li>
-          </ul>
-        </div>  <!--HeadersColEnd-->
+        <div class="row"> <!--First div row start-->
 
-        <div class="col-sm card weatherappcard"> <!--TemperatureColStart--> 
-          <h1 class="weather_color_blue">
-            <i class="fas fa-temperature-high"></i> 
-            <span id="temperature">
-              19
-            </span>
-          
-            <span class="superscript weather_color_blue" id="celsius">ºC |</span>  
-            <span class="superscript weather_color_grey" id="fahrenheit">ºF</span>
-          </h1>
-          <ul>
-            <li>
-              <p id="humidity">
-                Humidity
-              </p>
-            </li>
-            <li><p id="precipitation">
-                Precipitation
-            </p>
-          </li>
-            <li>
-              <p id="windspeed">
-                Wind speed
-              </p>
-            </li>
-          </ul>
-          
-          
-        </div> <!--TemperatureColEnd--> 
+          <div class="col-9"> <!--First div row;first col start-->
 
-        <div class="col-sm card weatherappcard"> <!--ImgsColStart-->
-          <img
-            src="https://www.kiwanidolean.com/wp-content/uploads/Summer_2020_Wallpaper_Preview.png"
-            alt="laptop with summer wallpaper from kiwanidolean.com" 
-          />
-        </div> 
-      </div> <!--HeadersDivEnd-->
-      
+            <div class="row d-flex"> <!--First div row;first col; first row start-->
 
-      <div class="row"> <!--LocationRowStart-->
+              <div class="col-md card card-align"> <!--geolocation col start-->
+                <h1>
+                  <i class="fas fa-globe-europe"></i>
+                  <span id="showLocation">
+                    Lisbon
+                  </span>
+                </h1>
+                <ul>
+                  <li>
+                    <h3 id="headerTime">
+                      12h00min
+                    </h3>
+                  </li>
+                  <li>
+                    <h3 id="headerDate">
+                      Monday, January 01, 2112
+                    </h3>
+                  </li>
+                  <li>
+                    <p id="description">
+                      Current weather
+                    </p>
+                  </li>
+                </ul>
+              </div>  <!--geolocation col end-->
 
+              <div class="col-md card card-align text-center"> <!--temperature col start--> 
+                <h1 class="weather_color_blue">
+                  <i class="fas fa-temperature-high"></i> 
+                  <span id="temperature">
+                    19
+                  </span>
+                
+                  <span class="superscript weather_color_blue" id="celsius">ºC |</span>  
+                  <span class="superscript weather_color_grey" id="fahrenheit">ºF</span>
+                </h1>
+                <ul>
+                  <li>
+                    <p id="humidity">
+                      Humidity
+                    </p>
+                  </li>
+                  <li><p id="precipitation">
+                      Precipitation
+                  </p>
+                </li>
+                  <li>
+                    <p id="windspeed">
+                      Wind speed
+                    </p>
+                  </li>
+                </ul>
+                
+                
+              </div> <!--temperature col end-->
+
+            </div> <!--First div row;first col; first row end-->
+
+            <div class="row align-items-start"> <!--First div row;first col; second row start-->
+
+              <div class="col-md card"> <!--form col start--> 
+                <form class="row"
+                      id="frloc">
+                      <div class="col-8">
+                        <input class="form-control"
+                        type="search"
+                        placeholder="type a place name"
+                        id="formlocation">
+                      </div>
+                      <div class="col-4">
+                        <input class="btn btn-outline-secondary btn_out_color"
+                        type="submit"
+                        value="Submit">
+                      </div>
+                  </form>
+              </div> <!--form col end--> 
+              
+              <div class="col-md card">  <!--my location button col start--> 
+                <button 
+                  id="mylocation"
+                  type="button"
+                  class="btn btn-outline-secondary btn_out_color"
+                  onclick="myLocation()"
+                  > My Location
+                </button>
+              </div> <!--my location button col start--> 
+
+            </div> <!--First div row;first col; second row end-->
+
+          </div> <!--First div row;first col end-->
+
+          <div class="col-3 d-flex align-self-center"> <!--First div row;second col start-->
+
+            <div class="card laptop_img_div"> <!--img col start-->
+              <img
+                src="https://www.kiwanidolean.com/wp-content/uploads/Summer_2020_Wallpaper_Preview.png"
+                alt="laptop with summer wallpaper from kiwanidolean.com" 
+                id="laptop_img"
+              />
+            </div> <!--img col end-->
+
+          </div> <!--First div row;second col end-->
+
+        </div> <!--First div row end-->
         
-        <div class="col-sm card weatherappcard"> <!--FormColStart--> 
-          <form class="row"
-                id="frloc">
-                <div class="col-9">
-                  <input class="form-control"
-                  type="search"
-                  placeholder="type a location here"
-                  id="formlocation">
+  
+        
+
+          <!--Second div row start
+            <div class="row"> 
+
+                <div class="col-auto">
+
+                  <div class="card" style="width: 12rem;">
+
+                    <div class="card-body">
+                      <h5 class="card-title titles">Thursday</h5>
+                      <h6 class="card-subtitle mb-2 subtitles">April 2nd</h6>
+                      <p class="card-text">Temperature: 18ºC</p>
+                      <p class="card-text">
+                        <i class="fas fa-sun"></i>
+                        Sunny
+                      </p>
+                      <p class="card-text">
+                        <i class="fas fa-tint"></i>
+                        Humidity: 45%
+                      </p>
+                    </div>
+
+                  </div>
+
                 </div>
-                <div class="col-3">
-                  <input class="btn btn-outline-secondary btn_out_color"
-                  type="submit"
-                  value="Submit">
+
+                <div class="col-auto">
+
+                  <div class="card" style="width: 12rem;">
+
+                    <div class="card-body">
+                      <h5 class="card-title titles">Friday</h5>
+                      <h6 class="card-subtitle mb-2 subtitles">April 3rd</h6>
+                      <p class="card-text">Temperature: 19ºC</p>
+                      <p class="card-text">
+                        <i class="fas fa-sun"></i>
+                        Sunny
+                      </p>
+                      <p class="card-text">
+                        <i class="fas fa-tint"></i>
+                        Humidity: 40%
+                      </p>
+                    </div>
+
+                  </div>
+
                 </div>
-            </form>
-        </div> <!--FormColEnd--> 
-        
-        <div class="col-sm card weatherappcard">  <!--MyLocationColStart--> 
-          <button 
-            id="mylocation"
-            type="button"
-            class="btn btn-outline-secondary btn_out_color"
-            onclick="myLocation()"
-            > My Location
-          </button>
-        </div> <!--MyLocationColEnd--> 
 
-      </div> <!--LocationRowEnd-->
+                <div class="col-auto">
+                  <div class="card" style="width: 12rem;">
+                    <div class="card-body">
+                      <h5 class="card-title titles">Saturday</h5>
+                      <h6 class="card-subtitle mb-2 subtitles">April 4th</h6>
+                      <p class="card-text">Temperature: 17ºC</p>
+                      <p class="card-text">
+                        <i class="fas fa-cloud-sun"></i>
+                        Cloudy
+                      </p>
+                      <p class="card-text">
+                        <i class="fas fa-tint"></i>
+                        Humidity: 85%
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="card" style="width: 12rem;">
+                    <div class="card-body">
+                      <h5 class="card-title titles">Sunday</h5>
+                      <h6 class="card-subtitle mb-2 subtitles">April 5th</h6>
+                      <p class="card-text">Temperature: 18ºC</p>
+                      <p class="card-text">
+                        <i class="fas fa-sun"></i>
+                        Sunny
+                      </p>
+                      <p class="card-text">
+                        <i class="fas fa-tint"></i>
+                        Humidity: 65%
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="card" style="width: 12rem;">
+                    <div class="card-body">
+                      <h5 class="card-title titles">Monday</h5>
+                      <h6 class="card-subtitle mb-2 subtitles">April 7th</h6>
+                      <p class="card-text">Temperature: 19ºC</p>
+                      <p class="card-text">
+                        <i class="fas fa-sun"></i>
+                        Sunny
+                      </p>
+                      <p class="card-text">
+                        <i class="fas fa-tint"></i>
+                        Humidity: 62%
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                
+            </div>
+          Second div row end-->
 
-      <!--
-      <div class="row"> 
-        <div class="col-auto">
-          <div class="card" style="width: 12rem;">
-            <div class="card-body">
-              <h5 class="card-title titles">Thursday</h5>
-              <h6 class="card-subtitle mb-2 subtitles">April 2nd</h6>
-              <p class="card-text">Temperature: 18ºC</p>
-              <p class="card-text">
-                <i class="fas fa-sun"></i>
-                Sunny
-              </p>
-              <p class="card-text">
-                <i class="fas fa-tint"></i>
-                Humidity: 45%
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="card" style="width: 12rem;">
-            <div class="card-body">
-              <h5 class="card-title titles">Friday</h5>
-              <h6 class="card-subtitle mb-2 subtitles">April 3rd</h6>
-              <p class="card-text">Temperature: 19ºC</p>
-              <p class="card-text">
-                <i class="fas fa-sun"></i>
-                Sunny
-              </p>
-              <p class="card-text">
-                <i class="fas fa-tint"></i>
-                Humidity: 40%
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="card" style="width: 12rem;">
-            <div class="card-body">
-              <h5 class="card-title titles">Saturday</h5>
-              <h6 class="card-subtitle mb-2 subtitles">April 4th</h6>
-              <p class="card-text">Temperature: 17ºC</p>
-              <p class="card-text">
-                <i class="fas fa-cloud-sun"></i>
-                Cloudy
-              </p>
-              <p class="card-text">
-                <i class="fas fa-tint"></i>
-                Humidity: 85%
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="card" style="width: 12rem;">
-            <div class="card-body">
-              <h5 class="card-title titles">Sunday</h5>
-              <h6 class="card-subtitle mb-2 subtitles">April 5th</h6>
-              <p class="card-text">Temperature: 18ºC</p>
-              <p class="card-text">
-                <i class="fas fa-sun"></i>
-                Sunny
-              </p>
-              <p class="card-text">
-                <i class="fas fa-tint"></i>
-                Humidity: 65%
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="col-auto">
-          <div class="card" style="width: 12rem;">
-            <div class="card-body">
-              <h5 class="card-title titles">Monday</h5>
-              <h6 class="card-subtitle mb-2 subtitles">April 7th</h6>
-              <p class="card-text">Temperature: 19ºC</p>
-              <p class="card-text">
-                <i class="fas fa-sun"></i>
-                Sunny
-              </p>
-              <p class="card-text">
-                <i class="fas fa-tint"></i>
-                Humidity: 62%
-              </p>
-            </div>
-          </div>
-        </div>
-        
-      </div>-->
-       <!--footer-->
-       <div class="card weatherappcard" id="footer">
-        <p class="card-title">Weather_app_project 
+      </div> <!--container end-->
+
+      <!--footer-->
+       <div id="footer">
+        <p>Weather_app_project 
           <i class="fa-brands fa-github"></i>
           <a href="https://github.com/SiViana/Weather_app_project" target="blank"> by SiViana</a>
         </p>
       </div>      
-    </div>
+
+    </div> <!--Wrapper end-->
     
 
     <script src="src/index.js"></script>
