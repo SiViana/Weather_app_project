@@ -15,7 +15,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Document</title>
+    <title>Weather app</title>
   </head>
   <body>
     <div class="container">
@@ -29,10 +29,21 @@
               Lisbon
             </span>
           </h1>
-            <h2 id="headerTime">
-          </h2>
-            <h3 id="headerDate">
-          </h3>
+          <ul>
+            <li>
+              <h2 id="headerTime">
+              </h2>
+            </li>
+            <li>
+              <h3 id="headerDate">
+              </h3>
+            </li>
+            <li>
+              <p id="description">
+                Current weather
+              </p>
+            </li>
+          </ul>
         </div>  <!--HeadersColEnd-->
 
         <div class="col-sm card weatherappcard"> <!--TemperatureColStart--> 
@@ -45,20 +56,26 @@
             <span class="superscript weather_color_blue" id="celsius">ºC |</span>  
             <span class="superscript weather_color_grey" id="fahrenheit">ºF</span>
           </h1>
+          <ul>
+            <li>
+              <p id="humidity">
+                Humidity
+              </p>
+            </li>
+            <li><p id="precipitation">
+                Precipitation
+            </p>
+          </li>
+            <li>
+              <p id="windspeed">
+                Wind speed
+              </p>
+            </li>
+          </ul>
+          
+          
         </div> <!--TemperatureColEnd--> 
 
-        <div class="col-sm card weatherappcard"> <!--DescriptionColStart--> 
-          <h1><i class="fas fa-rainbow"></i></h1>
-          <h4 id="description">
-            Current weather
-          </h4>
-          <h4 id="humidity">
-            Humidity
-          </h4>
-          <h4 id="windspeed">
-            Wind speed
-          </h4>
-        </div> <!--DescriptionColEnd--> 
         <div class="col-sm card weatherappcard"> <!--ImgsColStart-->
           <img
             src="https://www.kiwanidolean.com/wp-content/uploads/Summer_2020_Wallpaper_Preview.png"
