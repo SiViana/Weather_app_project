@@ -68,6 +68,11 @@ body {
     font-size: smaller;
   }
 
+  #weather_icon{
+    width: 100px;
+    height: auto;
+  }
+
   #windspeed {
     color: #f95800;
   }
@@ -110,10 +115,10 @@ body {
       margin: 0 auto; 
       border: 1px solid lightgray;
       border-radius: 5px;
-      padding-bottom: 10px;
+      padding: 0px 0px 10px 20px;
     }
 
-    .laptop_img_div {
+    .weather_icon_div {
       margin: 0 auto;
     }
 

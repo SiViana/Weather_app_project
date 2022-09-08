@@ -97,6 +97,7 @@ function formatDate(timestamp){
         let description = response.data.weather[0].description;
         let humidity = response.data.main.humidity;
         let windspeed = Math.round(response.data.wind.speed*3600/1000); //convert m/s to km/h
+        let weather_icon = response.data.weather[0].icon;
 
         let actualLocation= document.querySelector("#showLocation");
         actualLocation.innerHTML = `${city}`;
@@ -115,6 +116,9 @@ function formatDate(timestamp){
 
         let lastUpdate = document.querySelector("#lastupdate");
         lastUpdate.innerHTML = formatDate(response.data.dt*1000);
+
+        let actualWeatherIcon = document.querySelector("#weather_icon")
+        actualWeatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${weather_icon}@2x.png`)
 
         
       }
