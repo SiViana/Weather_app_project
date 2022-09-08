@@ -34,7 +34,6 @@ let actualDate = new Date();
     
     function myLocation(event){
         navigator.geolocation.getCurrentPosition(getPosition);
-    
     }
 
     myLocation()
@@ -47,7 +46,6 @@ let actualDate = new Date();
         let apiKey = "688018bb7f107c9335eff97b45fc2591";
         let apiUrl = `${endPoint}lat=${lat}&lon=${long}&units=${units}&appid=${apiKey}`;
         axios.get(apiUrl).then(showWeather);
-
       }
     
     //Show location from text-box
@@ -92,7 +90,7 @@ function formatDate(timestamp){
 }
 
     function showWeather(response) {
-        let temperature = Math.round(response.data.main.temp);
+        celsiusTemp = Math.round(response.data.main.temp);
         let city = response.data.name;
         let description = response.data.weather[0].description;
         let humidity = response.data.main.humidity;
@@ -103,7 +101,7 @@ function formatDate(timestamp){
         actualLocation.innerHTML = `${city}`;
 
         let actualTemperature = document.querySelector("#temperature"); 
-        actualTemperature.innerHTML = `${temperature}`;
+        actualTemperature.innerHTML = `${celsiusTemp}`;
 
         let actualWeather = document.querySelector("#description");
         actualWeather.innerHTML = `${description}`;
@@ -117,20 +115,21 @@ function formatDate(timestamp){
         let lastUpdate = document.querySelector("#lastupdate");
         lastUpdate.innerHTML = formatDate(response.data.dt*1000);
 
-        let actualWeatherIcon = document.querySelector("#weather_icon")
-        actualWeatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${weather_icon}@2x.png`)
+        let actualWeatherIcon = document.querySelector("#weather_icon");
+        actualWeatherIcon.setAttribute("src",`http://openweathermap.org/img/wn/${weather_icon}@2x.png`);
+        actualWeatherIcon.setAttribute("alt",`${description}`)
 
-        
       }
 
 
-
-/*
 //Changing temperature from ºC ⇄ ºF
 
 function toFahrenheit(event){
+    event.preventDefault();
+    let toFahrenheit = 32+(celsiusTemp)*9/5;
+
     let temperature = document.querySelector("#temperature");
-    temperature.innerHTML = `66`;
+    temperature.innerHTML = `${toFahrenheit}`;
 
     let changeFahrenheit = document.querySelector("#fahrenheit");
     changeFahrenheit.classList.remove("weather_color_grey");
@@ -144,6 +143,7 @@ function toFahrenheit(event){
 let fahrenheit = document.querySelector("#fahrenheit")
 fahrenheit.addEventListener("click", toFahrenheit)
 
+/*
 function toCelsius(event){
     let temperature = document.querySelector("#temperature");
     temperature.innerHTML = `19`;
@@ -156,6 +156,6 @@ function toCelsius(event){
     changeFahrenheit.classList.remove("weather_color_blue");
     changeFahrenheit.classList.add("weather_color_grey");
 }
+*/
 
-let celsius = document.querySelector("#celsius")
-celsius.addEventListener("click", toCelsius) */
+let celsiusTemp = null;
