@@ -133,29 +133,28 @@ function toFahrenheit(event){
 
     let changeFahrenheit = document.querySelector("#fahrenheit");
     changeFahrenheit.classList.remove("weather_color_grey");
-    changeFahrenheit.classList.add("weather_color_blue");
 
     let changeCelsius = document.querySelector("#celsius");
-    changeCelsius.classList.remove("weather_color_blue")
     changeCelsius.classList.add("weather_color_grey")
 }
 
 let fahrenheit = document.querySelector("#fahrenheit")
 fahrenheit.addEventListener("click", toFahrenheit)
 
-/*
-function toCelsius(event){
+
+function toCelsius(event){ 
+    event.preventDefault();
     let temperature = document.querySelector("#temperature");
-    temperature.innerHTML = `19`;
+    temperature.innerHTML = celsiusTemp;
 
     let changeCelsius = document.querySelector("#celsius");
     changeCelsius.classList.remove("weather_color_grey")
-    changeCelsius.classList.add("weather_color_blue")
 
     let changeFahrenheit = document.querySelector("#fahrenheit");
-    changeFahrenheit.classList.remove("weather_color_blue");
-    changeFahrenheit.classList.add("weather_color_grey");
+    changeFahrenheit.classList.add("weather_color_grey"); 
 }
-*/
+
+let celsius = document.querySelector("#celsius")
+celsius.addEventListener("click", toCelsius)
 
 let celsiusTemp = null;

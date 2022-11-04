@@ -125,10 +125,6 @@ body {
     .weatherappwrapper{
       max-width: 60%;
     }
-      
-    .weather_color_blue, #fahrenheit:hover {
-      color: #23aaae;
-      }
 
     .weather_color_grey, #celsius:hover {
       color: slategray;
