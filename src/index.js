@@ -80,8 +80,13 @@ function formatDate(timestamp){
     let updateMinutes = ("0" + lastUpdate.getMinutes()).slice(-2);
 
     //Date format
-    
-    let updateMonth = ("0" + (lastUpdate.getMonth()+1));
+    let updateMonth;
+
+    if((lastUpdate.getMonth()+1)>9){
+        updateMonth = lastUpdate.getMonth()+1;
+    } else{
+        updateMonth = ("0" + (lastUpdate.getMonth()+1))
+    };
     let updateDay = ("0" + lastUpdate.getDate()).slice(-2);
     let updateYear = (lastUpdate.getYear())-100;
     
@@ -107,7 +112,7 @@ function formatDate(timestamp){
         actualWeather.innerHTML = `${description}`;
 
         let actualHumidity = document.querySelector("#humidity");
-        actualHumidity.innerHTML = `Humidity: ${humidity}%`;
+        actualHumidity.innerHTML = `<i class="fas fa-tint"></i> Humidity: ${humidity}%`;
 
         let actualWindSpeed = document.querySelector("#windspeed");
         actualWindSpeed.innerHTML = `Wind speed: ${windspeed}Km/h`;
